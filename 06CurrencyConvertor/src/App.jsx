@@ -4,10 +4,10 @@ import useCurrencyInfo from "./hooks/useCurrencyInfo";
 import { MdOutlineSwapCalls } from "react-icons/md";
 
 function App() {
-    const [amount, setAmount] = useState(null);
+    const [amount, setAmount] = useState("");
     const [from, setFrom] = useState("usd");
     const [to, setTo] = useState("inr");
-    const [convertedAmount, setConvertedAmount] = useState(null);
+    const [convertedAmount, setConvertedAmount] = useState("");
 
     const currencyInfo = useCurrencyInfo(from);
 
@@ -16,6 +16,7 @@ function App() {
     const swap = () => {
         setFrom(to);
         setTo(from);
+
         setConvertedAmount(amount);
         setAmount(convertedAmount);
     };
